@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+footer,
+header {
+  @apply text-white;
+}
+
+/* Scrollbars */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+*::-webkit-scrollbar-track {
+  background: white;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: #374151;
+  border-radius: 20px;
+  border: 2px solid white;
+}
+
+.disabled {
+  @apply pointer-events-none opacity-30;
+}
