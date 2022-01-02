@@ -86,9 +86,10 @@ export default {
       showImgGrid: false,
     }
   },
-  mounted() {
-    this.getImages()
+  async fetch() {
+    await this.getImages()
   },
+  fetchOnServer: false,
   methods: {
     nextPage() {
       const p =
@@ -96,18 +97,18 @@ export default {
           ? parseInt(this.page) + 1
           : this.page
       this.page = p
-      this.getImages()
+      this.$fetch()
     },
     previousPage() {
       const p = parseInt(this.page) > 1 ? parseInt(this.page) - 1 : this.page
       this.page = p
-      this.getImages()
+      this.$fetch()
     },
     getImages() {
       this.showImgGrid = false
       this.$axios
         .get(
-          `https://pixabay.com/api/?key=${this.api_key}&q=${this.q}&image_type=${this.image_type}&per_page=${this.per_page}&page=${this.page}`
+          `?key=${this.api_key}&q=${this.q}&image_type=${this.image_type}&per_page=${this.per_page}&page=${this.page}`
         )
         .then((response) => {
           this.images = response.data.hits
@@ -116,7 +117,7 @@ export default {
     },
     Search() {
       this.page = 1
-      this.getImages()
+      this.$fetch()
     },
     handleLoad() {
       this.imgLoaded++
