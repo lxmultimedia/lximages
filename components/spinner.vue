@@ -1,5 +1,5 @@
 <template>
-  <div class="splash-screen">
+  <div id="wrapper">
     <div id="img1" class="img"></div>
     <div id="img2" class="img"></div>
     <div id="img3" class="img"></div>
@@ -9,6 +9,8 @@
 </template>
 
 <style scoped>
+#wrapper {
+}
 .img {
   width: 100px;
   height: 100px;
@@ -21,7 +23,7 @@
   border-bottom: none;
   border-right: none;
   animation-timing-function: linear;
-  margin-left: -70px;
+  margin-left: -50px;
   margin-top: -70px;
   left: 50%;
   top: 50%;
