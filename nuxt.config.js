@@ -41,7 +41,7 @@ export default {
   axios: {
     baseURL: 'https://pixabay.com/api/',
     proxyHeaders: false,
-    credentials: false,
+    credentials: true,
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
