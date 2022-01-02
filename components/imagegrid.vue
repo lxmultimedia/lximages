@@ -107,8 +107,7 @@ export default {
       this.showImgGrid = false
       this.$axios
         .get(
-          `https://pixabay.com/api?key=${this.api_key}&q=${this.q}&image_type=${this.image_type}&per_page=${this.per_page}&page=
-        ${this.page}/`
+          `https://pixabay.com/api?key=${this.api_key}&q=${this.q}&image_type=${this.image_type}&per_page=${this.per_page}&page=${this.page}`
         )
         .then((response) => {
           this.images = response.data.hits
