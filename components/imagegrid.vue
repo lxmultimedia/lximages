@@ -1,8 +1,8 @@
 <template>
   <div>
-    <section class="bg-gray-700 p-10 w-full">
+    <section class="bg-gray-700 p-5 w-full">
       <form
-        class="w-1/2 flex items-center justify-center m-auto"
+        class="w-full md:w-3/4 xl:w-1/2 flex items-center justify-center m-auto"
         @submit.prevent="Search()"
       >
         <input

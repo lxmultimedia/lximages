@@ -18,7 +18,7 @@
 
     <footer
       id="footer"
-      class="mt-5 p-4 flex justify-between items-center text-center bg-gray-800 w-full"
+      class="mt-5 p-4 flex flex-col md:flex-row space-y-4 md:space-y-0 justify-between items-center text-center bg-gray-800 w-full"
     >
       <div>
         &copy; 2021 -

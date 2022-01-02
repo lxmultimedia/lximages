@@ -1,57 +1,69 @@
 <template>
   <div class="splash-screen">
-    <div class="spinner-wrapper">
-      <div class="spinner"></div>
-    </div>
+    <div id="img1" class="img"></div>
+    <div id="img2" class="img"></div>
+    <div id="img3" class="img"></div>
+    <div id="img4" class="img"></div>
+    <div id="img5" class="img"></div>
   </div>
 </template>
 
 <style scoped>
-.splash-screen {
-  background: transparent;
-  width: 100%;
-  height: 50%;
-  position: fixed;
-  z-index: 50;
-}
-
-.spinner-wrapper {
+.img {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
   position: absolute;
+  border: 1px solid red;
+  animation: up 1s;
+  animation-iteration-count: infinite;
+  transition: 2s;
+  border-bottom: none;
+  border-right: none;
+  animation-timing-function: linear;
+  margin-left: -70px;
+  margin-top: -70px;
   left: 50%;
   top: 50%;
-
-  transform: translate(-50%, -50%);
 }
-.spinner {
+
+@keyframes up {
+  from {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+#img2 {
+  width: 90px;
+  height: 90px;
+  left: 50.35%;
+  top: 50.7%;
+  animation-delay: 0.2s;
+}
+#img3 {
   width: 80px;
   height: 80px;
-  margin: 100px auto;
-  background-color: #e19524;
-
-  border-radius: 100%;
-  -webkit-animation: sk-scaleout 1s infinite ease-in-out;
-  animation: sk-scaleout 1s infinite ease-in-out;
+  left: 50.7%;
+  top: 51.4%;
+  animation-delay: 0.4s;
 }
-
-@-webkit-keyframes sk-scaleout {
-  0% {
-    -webkit-transform: scale(0);
-  }
-  100% {
-    -webkit-transform: scale(1);
-    opacity: 0;
-  }
+#img4 {
+  width: 70px;
+  height: 70px;
+  left: 51.05%;
+  top: 52.1%;
+  animation-delay: 0.6s;
 }
-
-@keyframes sk-scaleout {
-  0% {
-    -webkit-transform: scale(0);
-    transform: scale(0);
-  }
-  100% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-    opacity: 0;
-  }
+#img5 {
+  width: 60px;
+  height: 60px;
+  left: 51.4%;
+  top: 52.8%;
+  animation-delay: 0.8s;
 }
 </style>
