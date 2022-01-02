@@ -29,7 +29,7 @@
           >LX Multimedia</a
         >
       </div>
-      <div class="flex space-x-4">
+      <div class="flex space-x-4 items-center">
         <span>Powered by</span>
         <a href="https://www.pixabay.com" target="__blank"
           ><img
