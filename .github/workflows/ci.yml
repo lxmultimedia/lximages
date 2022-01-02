@@ -1,4 +1,4 @@
-name: ci
+name: deploy_on_gcloud
 
 on:
   push:
@@ -40,8 +40,10 @@ jobs:
       - name: Install dependencies 👨🏻‍💻
         run: npm ci --prefer-offline --no-audit
 
-      - name: Run linter 👀
-        run: npm run lint
+      - id: 'auth'
+        uses: 'google-github-actions/auth@v0'
+        with:
+          credentials_json: '${{ secrets.GCP_SA_KEY }}'
 
-      - name: Run tests 🧪
-        run: npm run test
+      - id: 'deploy'
+        uses: 'google-github-actions/deploy-appengine@v0'
