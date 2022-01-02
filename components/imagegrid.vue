@@ -11,7 +11,7 @@
           type="text"
           placeholder="Search keywords..."
           aria-label="Image Search input"
-          class="p-2 w-8/12 rounded-l-md rounded-r-0 leading-tight appearance-none focus:bg-gray-200 focus:border-gray-500"
+          class="p-2 w-8/12 rounded-l-md rounded-r-none leading-tight appearance-none focus:bg-gray-200 focus:border-gray-500"
         />
         <select
           v-model="image_type"
