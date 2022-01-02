@@ -40,6 +40,10 @@ jobs:
       - name: Install dependencies 👨🏻‍💻
         run: npm ci --prefer-offline --no-audit
 
+      # Starts build process defined in Makefike
+      - id: build
+        run: npm run build
+
       - id: 'auth'
         uses: 'google-github-actions/auth@v0'
         with:
