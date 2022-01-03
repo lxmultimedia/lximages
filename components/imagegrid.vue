@@ -12,12 +12,12 @@
           type="text"
           placeholder="Search keywords..."
           aria-label="Image Search input"
-          class="p-2 w-8/12 rounded-l-md rounded-r-none leading-tight appearance-none focus:bg-gray-200 focus:border-gray-500 focus:outline-none"
+          class="p-2 w-6/12 rounded-l-md rounded-r-none leading-tight appearance-none focus:bg-gray-200 focus:border-gray-500 focus:outline-none"
           @click="$refs.input.select()"
         />
         <select
           v-model="image_type"
-          class="p-2 w-2/12 leading-tight appearance-none bg-gray-100 focus:bg-gray-200 focus:border-gray-500 focus:outline-none"
+          class="p-2 w-3/12 leading-tight appearance-none bg-gray-100 focus:bg-gray-200 focus:border-gray-500 focus:outline-none"
         >
           <option value="all">All</option>
           <option value="photo">Photo</option>
@@ -26,7 +26,7 @@
         </select>
         <button
           id="submit"
-          class="p-2 w-2/12 bg-yellow-500 rounded-r-md leading-tight appearance-none text-md text-white hover:bg-yellow-600 focus:outline-none"
+          class="p-2 w-3/12 bg-yellow-500 rounded-r-md leading-tight appearance-none text-md text-white hover:bg-yellow-600 focus:outline-none"
           type="submit"
         >
           Search
