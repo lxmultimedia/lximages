@@ -10,10 +10,10 @@
           ref="input"
           v-model="q"
           type="text"
-          @click="$refs.input.select()"
           placeholder="Search keywords..."
           aria-label="Image Search input"
           class="p-2 w-8/12 rounded-l-md rounded-r-none leading-tight appearance-none focus:bg-gray-200 focus:border-gray-500 focus:outline-none"
+          @click="$refs.input.select()"
         />
         <select
           v-model="image_type"
