@@ -1,21 +1,23 @@
 <template>
   <div>
-    <section class="bg-gray-700 p-5 w-full">
+    <section class="bg-gray-700 p-2 md:p-5 w-full">
       <form
         class="w-full md:w-3/4 xl:w-1/2 flex items-center justify-center m-auto"
         @submit.prevent="Search()"
       >
         <input
           id="input"
+          ref="input"
           v-model="q"
           type="text"
+          @click="$refs.input.select()"
           placeholder="Search keywords..."
           aria-label="Image Search input"
-          class="p-2 w-8/12 rounded-l-md rounded-r-none leading-tight appearance-none focus:bg-gray-200 focus:border-gray-500"
+          class="p-2 w-8/12 rounded-l-md rounded-r-none leading-tight appearance-none focus:bg-gray-200 focus:border-gray-500 focus:outline-none"
         />
         <select
           v-model="image_type"
-          class="p-2 w-2/12 leading-tight appearance-none bg-gray-100 focus:bg-gray-200 focus:border-gray-500"
+          class="p-2 w-2/12 leading-tight appearance-none bg-gray-100 focus:bg-gray-200 focus:border-gray-500 focus:outline-none"
         >
           <option value="all">All</option>
           <option value="photo">Photo</option>
@@ -24,7 +26,7 @@
         </select>
         <button
           id="submit"
-          class="p-2 w-2/12 bg-yellow-500 rounded-r-md leading-tight appearance-none text-md text-white hover:bg-yellow-600"
+          class="p-2 w-2/12 bg-yellow-500 rounded-r-md leading-tight appearance-none text-md text-white hover:bg-yellow-600 focus:outline-none"
           type="submit"
         >
           Search
