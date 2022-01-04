@@ -51,10 +51,10 @@
           :key="image.id"
           target="_blank"
           :href="image.largeImageURL"
-          class="shadow-sm inline-block md:max-h-44 max-h-96"
+          class="shadow-sm inline-block w-full border border-gray-600 overflow-hidden"
           :class="{ hidden: !showImgGrid }"
           ><img
-            class="object-cover border border-gray-600 transform hover:scale-105 transition duration-100 rounded-sm w-full h-full"
+            class="object-cover transform hover:scale-105 transition duration-100 rounded-sm w-full h-300"
             :alt="image.tags[0]"
             :src="image.webformatURL"
             @load="handleLoad"
