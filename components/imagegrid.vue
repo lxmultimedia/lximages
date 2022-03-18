@@ -44,22 +44,19 @@
       <section
         id="photos"
         ref="imageElement"
-        class="p-4 bg-gray-800 grid grid-cols-1 xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-4 mx-auto npm min-h-screen"
+        class="p-4 bg-gray-800 grid grid-cols-1 xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-4 mx-auto min-h-screen"
       >
         <a
           v-for="image in images"
           :key="image.id"
           target="_blank"
           :href="image.largeImageURL"
-          class="shadow-sm inline-block w-full border border-gray-600 overflow-hidden"
-          :class="{ hidden: !showImgGrid }"
+          class="shadow-sm inline-block border w-full h-60 border-gray-600 overflow-hidden"
           ><img
-            class="object-cover transform hover:scale-105 transition duration-100 rounded-sm w-full h-300"
+            class="transform hover:scale-105 transition object-cover w-full h-full duration-100 rounded-sm"
             :alt="image.tags[0]"
             :src="image.webformatURL"
-            @load="handleLoad"
         /></a>
-        <spinner :class="{ hidden: showImgGrid }"></spinner>
       </section>
       <pagination
         :page="page"
@@ -72,7 +69,6 @@
 </template>
 <script setup>
 import Pagination from '~/components/pagination.vue'
-import Spinner from '~/components/spinner.vue'
 
 export default {
   data() {
@@ -85,7 +81,6 @@ export default {
       per_page: 40,
       max_page: 50,
       imgLoaded: 0,
-      showImgGrid: false,
     }
   },
   async fetch() {
@@ -107,26 +102,18 @@ export default {
       this.$fetch()
     },
     getImages() {
-      this.showImgGrid = false
       this.$axios
         .get(
           `/api/?key=${this.api_key}&q=${this.q}&image_type=${this.image_type}&per_page=${this.per_page}&page=${this.page}`
         )
         .then((response) => {
           this.images = response.data.hits
-          this.max_page = Math.ceil(response.data.totalHits / this.per_page)
+          this.max_page = Math.ceil(response.data.totalHits / this.per_page) - 1
         })
     },
     Search() {
       this.page = 1
       this.$fetch()
-    },
-    handleLoad() {
-      this.imgLoaded++
-      if (this.imgLoaded === this.per_page) {
-        this.showImgGrid = true
-        this.imgLoaded = 0
-      }
     },
   },
 }
