@@ -1,5 +1,7 @@
 <template>
-  <section class="pagination py-3 my-2 flex justify-between text-white">
+  <section
+    class="pagination py-3 my-2 flex items-center justify-between text-white"
+  >
     <a
       title="Previous Page"
       class="cursor-pointer"
