@@ -11,7 +11,13 @@ export default {
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap',
+      },
+    ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -39,8 +45,8 @@ export default {
     [
       'nuxt-lazy-load',
       {
-        defaultImage: '/assets/images/placeholder.jpg'
-      }
+        defaultImage: '/assets/images/placeholder.jpg',
+      },
     ],
   ],
 
