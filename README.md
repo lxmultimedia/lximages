@@ -2,7 +2,7 @@
 
 ### NUXT app for searching images on Pixabay
 
-Link to [LX Image Search](https://www.lximages.tk) online.
+Link to [LX Image Search](https://lximages.ozona.ch) online.
 
-![LX Image Search Screenshot](https://www.lxmcloud.tk/giti/lxis.jpg "LX Image Search Screenshot")
+![LX Image Search Screenshot](https://cloud.ozona.ch/giti/lxis.jpg "LX Image Search Screenshot")
 
